@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Button, Switch } from 'react-native';
 import { Formik, Field } from 'formik';
 import * as yup from 'yup';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import 'react-native-gesture-handler';
 
 
@@ -26,9 +27,17 @@ const QuestionarioScreen = ({ navigation }) => {
     vacinaDuplaBacteriana: false,
   };
 
-  const handleSubmit = (values) => {
-    // Envie os valores para onde quiser, como o backend
-    console.log(values);
+  const handleSubmit = async (values) => {
+    try {
+      // Salvando as respostas do questionário no AsyncStorage
+      await AsyncStorage.setItem('respostasQuestionario', JSON.stringify(values));
+      console.log('Respostas do questionário salvas com sucesso:', values);
+
+      // Aqui você pode navegar para a próxima tela ou fazer qualquer outra coisa que desejar
+      navigation.navigate('PróximaTela');
+    } catch (error) {
+      console.error('Erro ao salvar as respostas do questionário:', error);
+    }
   };
 
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import 'react-native-gesture-handler';
 
 
 const Tab = createMaterialTopTabNavigator();
@@ -21,51 +22,133 @@ const AbasVacinas = () => {
 
 const TetravalenteScreen = () => (
   <ScrollView>
-    <Text>Informações sobre a vacina tetravalente.</Text>
+    <Text style={styles.title}>Influenza</Text>
+    <Text>A influenza, conhecida como gripe, é uma doença viral possivelmente adquirida
+       através do contato humano com animais domesticados. Apesar de estar entre as mais
+        antigas doenças da civilização, os relatos documentados de sua difusão entre os homens
+         surgiram entre os séculos XV e XVI, e desde então tornou-se comum entre as pessoas,
+       atingindo as sociedades através de epidemias e pandemias de intensidades variadas - SILVEIRA, 2005. </Text>
     {/* Adicione aqui as informações textuais sobre a vacina tetravalente */}
+
+    <Text style={styles.subtitle}>Vacinas disponíveis</Text>
+    <Text style={styles.text}>Vacina influenza trivalente ou 
+    quadrivalente e quadrivalente de alta concentração - "high dose"HD4V
+</Text>
   </ScrollView>
 );
 
 const PneumococicaScreen = () => (
   <ScrollView>
-    <Text>Informações sobre a vacina pneumocócica conjugada.</Text>
-    {/* Adicione aqui as informações textuais sobre a vacina pneumocócica conjugada */}
+   <Text>A influenza, conhecida como gripe, é uma doença viral possivelmente adquirida
+       através do contato humano com animais domesticados. Apesar de estar entre as mais
+        antigas doenças da civilização, os relatos documentados de sua difusão entre os homens
+         surgiram entre os séculos XV e XVI, e desde então tornou-se comum entre as pessoas,
+       atingindo as sociedades através de epidemias e pandemias de intensidades variadas - SILVEIRA, 2005. </Text>
+    {/* Adicione aqui as informações textuais sobre a vacina tetravalente */}
+
+    <Text style={styles.subtitle}>Vacinas disponíveis</Text>
+    <Text style={styles.text}>Vacina influenza trivalente ou 
+    quadrivalente e quadrivalente de alta concentração - "high dose"HD4V
+</Text>
   </ScrollView>
 );
 
 const HepatiteBScreen = () => (
   <ScrollView>
-    <Text>Informações sobre a vacina hepatite B.</Text>
-    {/* Adicione aqui as informações textuais sobre a vacina hepatite B */}
+    <Text>A influenza, conhecida como gripe, é uma doença viral possivelmente adquirida
+       através do contato humano com animais domesticados. Apesar de estar entre as mais
+        antigas doenças da civilização, os relatos documentados de sua difusão entre os homens
+         surgiram entre os séculos XV e XVI, e desde então tornou-se comum entre as pessoas,
+       atingindo as sociedades através de epidemias e pandemias de intensidades variadas - SILVEIRA, 2005. </Text>
+    {/* Adicione aqui as informações textuais sobre a vacina tetravalente */}
+
+    <Text style={styles.subtitle}>Vacinas disponíveis</Text>
+    <Text style={styles.text}>Vacina influenza trivalente ou 
+    quadrivalente e quadrivalente de alta concentração - "high dose"HD4V
+</Text>
   </ScrollView>
 );
 
 const FebreAmarelaScreen = () => (
   <ScrollView>
-    <Text>Informações sobre a vacina febre amarela.</Text>
-    {/* Adicione aqui as informações textuais sobre a vacina febre amarela */}
+    <Text>A influenza, conhecida como gripe, é uma doença viral possivelmente adquirida
+       através do contato humano com animais domesticados. Apesar de estar entre as mais
+        antigas doenças da civilização, os relatos documentados de sua difusão entre os homens
+         surgiram entre os séculos XV e XVI, e desde então tornou-se comum entre as pessoas,
+       atingindo as sociedades através de epidemias e pandemias de intensidades variadas - SILVEIRA, 2005. </Text>
+    {/* Adicione aqui as informações textuais sobre a vacina tetravalente */}
+
+    <Text style={styles.subtitle}>Vacinas disponíveis</Text>
+    <Text style={styles.text}>Vacina influenza trivalente ou 
+    quadrivalente e quadrivalente de alta concentração - "high dose"HD4V
+</Text>
   </ScrollView>
 );
 
 const HPV4Screen = () => (
   <ScrollView>
-    <Text>Informações sobre a vacina HPV4.</Text>
-    {/* Adicione aqui as informações textuais sobre a vacina HPV4 */}
+    <Text>A influenza, conhecida como gripe, é uma doença viral possivelmente adquirida
+       através do contato humano com animais domesticados. Apesar de estar entre as mais
+        antigas doenças da civilização, os relatos documentados de sua difusão entre os homens
+         surgiram entre os séculos XV e XVI, e desde então tornou-se comum entre as pessoas,
+       atingindo as sociedades através de epidemias e pandemias de intensidades variadas - SILVEIRA, 2005. </Text>
+    {/* Adicione aqui as informações textuais sobre a vacina tetravalente */}
+
+    <Text style={styles.subtitle}>Vacinas disponíveis</Text>
+    <Text style={styles.text}>Vacina influenza trivalente ou 
+    quadrivalente e quadrivalente de alta concentração - "high dose"HD4V
+</Text>
   </ScrollView>
 );
 
 const VacinaVSRScreen = () => (
   <ScrollView>
-    <Text>Informações sobre a vacina VSR.</Text>
-    {/* Adicione aqui as informações textuais sobre a vacina VSR */}
+    <Text>A influenza, conhecida como gripe, é uma doença viral possivelmente adquirida
+       através do contato humano com animais domesticados. Apesar de estar entre as mais
+        antigas doenças da civilização, os relatos documentados de sua difusão entre os homens
+         surgiram entre os séculos XV e XVI, e desde então tornou-se comum entre as pessoas,
+       atingindo as sociedades através de epidemias e pandemias de intensidades variadas - SILVEIRA, 2005. </Text>
+    {/* Adicione aqui as informações textuais sobre a vacina tetravalente */}
+
+    <Text style={styles.subtitle}>Vacinas disponíveis</Text>
+    <Text style={styles.text}>Vacina influenza trivalente ou 
+    quadrivalente e quadrivalente de alta concentração - "high dose"HD4V
+</Text>
   </ScrollView>
 );
 
 const VacinaDuplaBacterianaScreen = () => (
   <ScrollView>
-    <Text>Informações sobre a vacina dupla bacteriana.</Text>
-    {/* Adicione aqui as informações textuais sobre a vacina dupla bacteriana */}
+    <Text>A influenza, conhecida como gripe, é uma doença viral possivelmente adquirida
+       através do contato humano com animais domesticados. Apesar de estar entre as mais
+        antigas doenças da civilização, os relatos documentados de sua difusão entre os homens
+         surgiram entre os séculos XV e XVI, e desde então tornou-se comum entre as pessoas,
+       atingindo as sociedades através de epidemias e pandemias de intensidades variadas - SILVEIRA, 2005. </Text>
+    {/* Adicione aqui as informações textuais sobre a vacina tetravalente */}
+
+    <Text style={styles.subtitle}>Vacinas disponíveis</Text>
+    <Text style={styles.text}>Vacina influenza trivalente ou 
+    quadrivalente e quadrivalente de alta concentração - "high dose"HD4V
+</Text>
   </ScrollView>
 );
+// Outros componentes de tela aqui
+
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  text: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+});
 
 export default AbasVacinas;
