@@ -19,6 +19,11 @@ const HomeScreen = ({ navigation }) => {
         title="Cartão de Vacina"
         onPress={() => navigation.navigate('CartaoVacina')}
       />
+
+<Button
+        title="Calendario de vacinação"
+        onPress={() => navigation.navigate('CalendarioVacinacaoScreen')}
+      />
     </View>
   );
 };

@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Text, Button, Switch } from 'react-native';
-import { Formik, Field } from 'formik';
-import * as yup from 'yup';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import 'react-native-gesture-handler';
+import React, { useState, useEffect } from "react";
+import { View, Text, Switch } from "react-native";
+import { Formik, Field } from "formik";
+import * as yup from "yup";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import CartaoVacinaScreen from './CartaoVacinaScreen'; 
 
 
 const schema = yup.object().shape({
@@ -17,6 +17,8 @@ const schema = yup.object().shape({
 });
 
 const QuestionarioScreen = ({ navigation }) => {
+  const [respostasQuestionario, setRespostasQuestionario] = useState(null);
+
   const initialValues = {
     tetravalente: false,
     pneumococica: false,
@@ -29,19 +31,35 @@ const QuestionarioScreen = ({ navigation }) => {
 
   const handleSubmit = async (values) => {
     try {
-      // Salvando as respostas do questionário no AsyncStorage
-      await AsyncStorage.setItem('respostasQuestionario', JSON.stringify(values));
-      console.log('Respostas do questionário salvas com sucesso:', values);
-
-      // Aqui você pode navegar para a próxima tela ou fazer qualquer outra coisa que desejar
-      navigation.navigate('PróximaTela');
+      await AsyncStorage.setItem(
+        "respostasQuestionario",
+        JSON.stringify(values)
+      );
+      console.log("Respostas do questionário salvas com sucesso:", values);
+      navigation.navigate("CartaoVacinaScreen"); // Altere para "CartaoVacinaScreen"
     } catch (error) {
-      console.error('Erro ao salvar as respostas do questionário:', error);
+      console.error("Erro ao salvar as respostas do questionário:", error);
     }
   };
+  
+
+  useEffect(() => {
+    const getRespostasQuestionario = async () => {
+      try {
+        const respostas = await AsyncStorage.getItem("respostasQuestionario");
+        if (respostas !== null) {
+          setRespostasQuestionario(JSON.parse(respostas));
+        }
+      } catch (error) {
+        console.error("Erro ao recuperar as respostas do questionário:", error);
+      }
+    };
+
+    getRespostasQuestionario();
+  }, []);
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Questionário de Vacina</Text>
       <Formik
         initialValues={initialValues}
@@ -57,7 +75,7 @@ const QuestionarioScreen = ({ navigation }) => {
             <Field name="hpv4" component={CheckBox} />
             <Field name="vacinaVSR" component={CheckBox} />
             <Field name="vacinaDuplaBacteriana" component={CheckBox} />
-            <Button title="Enviar" onPress={handleSubmit} />
+            {/* Removendo o botão de enviar */}
           </View>
         )}
       </Formik>
@@ -65,12 +83,12 @@ const QuestionarioScreen = ({ navigation }) => {
   );
 };
 
-const CheckBox = ({ field }) => (
-  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+const CheckBox = ({ field, form, ...props }) => (
+  <View style={{ flexDirection: "row", alignItems: "center" }}>
     <Text>{field.name}</Text>
     <Switch
       value={field.value}
-      onValueChange={field.onChange(field.name, !field.value)}
+      onValueChange={(newValue) => form.setFieldValue(field.name, newValue)}
     />
   </View>
 );
