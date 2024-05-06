@@ -14,8 +14,8 @@ const AbasVacinas = () => {
       <Tab.Screen name="Hepatite B" component={HepatiteBScreen} />
       <Tab.Screen name="Febre Amarela" component={FebreAmarelaScreen} />
       <Tab.Screen name="HPV4" component={HPV4Screen} />
-      <Tab.Screen name="Vacina VSR" component={VacinaVSRScreen} />
-      <Tab.Screen name="Vacina Dupla Bacteriana" component={VacinaDuplaBacterianaScreen} />
+      <Tab.Screen name=" VSR" component={VacinaVSRScreen} />
+      <Tab.Screen name="Dupla Bacteriana" component={VacinaDuplaBacterianaScreen} />
     </Tab.Navigator>
   );
 };

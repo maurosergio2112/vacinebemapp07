@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Switch } from "react-native";
+import { View, Text, Switch, Button } from "react-native";
 import { Formik, Field } from "formik";
 import * as yup from "yup";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import CartaoVacinaScreen from './CartaoVacinaScreen'; 
-
 
 const schema = yup.object().shape({
   tetravalente: yup.boolean(),
@@ -12,6 +10,8 @@ const schema = yup.object().shape({
   hepatiteB: yup.boolean(),
   febreAmarela: yup.boolean(),
   hpv4: yup.boolean(),
+  tripliceviral: yup.boolean(),
+  vzr: yup.boolean(),
   vacinaVSR: yup.boolean(),
   vacinaDuplaBacteriana: yup.boolean(),
 });
@@ -36,12 +36,10 @@ const QuestionarioScreen = ({ navigation }) => {
         JSON.stringify(values)
       );
       console.log("Respostas do questionário salvas com sucesso:", values);
-      navigation.navigate("CartaoVacinaScreen"); // Altere para "CartaoVacinaScreen"
     } catch (error) {
       console.error("Erro ao salvar as respostas do questionário:", error);
     }
   };
-  
 
   useEffect(() => {
     const getRespostasQuestionario = async () => {
@@ -60,7 +58,7 @@ const QuestionarioScreen = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Questionário de Vacina</Text>
+      <Text>Selecione quais Vacinas deseja fazer registro</Text>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
@@ -73,9 +71,11 @@ const QuestionarioScreen = ({ navigation }) => {
             <Field name="hepatiteB" component={CheckBox} />
             <Field name="febreAmarela" component={CheckBox} />
             <Field name="hpv4" component={CheckBox} />
+            <Field name="vzr" component={CheckBox} />
+            <Field name="tripliceviral" component={CheckBox} />
             <Field name="vacinaVSR" component={CheckBox} />
             <Field name="vacinaDuplaBacteriana" component={CheckBox} />
-            {/* Removendo o botão de enviar */}
+            <Button title="Salvar Respostas" onPress={handleSubmit} />
           </View>
         )}
       </Formik>

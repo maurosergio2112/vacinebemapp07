@@ -5,8 +5,10 @@ import HomeScreen from "./screens/HomeScreen";
 import QuestionarioScreen from "./screens/QuestionarioScreen";
 import AbasVacinas from "./screens/Abasvacinas";
 import CartaoVacinaScreen from "./screens/CartaoVacinaScreen";
-import CalendarioVacinacaoScreen from "./screens/CalendarioVacinacaoScreen";
+import DadosdasVacinasScreen from "./screens/DadosdasVacinasScreen";
 import { AppRegistry } from "react-native";
+import PerfilScreen from "./screens/PerfilScreen";
+import RegistroUsuarioScreen from "./screens/RegistroUsuarioScreen";
 
 const Stack = createStackNavigator();
 
@@ -16,7 +18,14 @@ AppRegistry.registerComponent("main", () => App);
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="RegistroUsuarioScreen">
+      
+      <Stack.Screen
+          name="RegistroUsuarioScreen"
+          component={RegistroUsuarioScreen}
+          options={{ title: "RegistroUsuarioScreen" }}
+        />
+
         <Stack.Screen
           name="Home"
           component={HomeScreen}
@@ -38,9 +47,15 @@ const App = () => {
           options={{ title: "Cartão de Vacina" }}
         />
         <Stack.Screen
-          name="CalendarioVacinacaoScreen"
-          component={CalendarioVacinacaoScreen}
-          options={{ title: "Calendario de Vacinação" }}
+          name="DadosdasVacinasScreen"
+          component={DadosdasVacinasScreen}
+          options={{ title: "DadosdasVacinasScreen" }}
+        />
+
+<Stack.Screen
+          name="PerfilScreen"
+          component={PerfilScreen}
+          options={{ title: "PerfilScreen" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
